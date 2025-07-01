@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, ExternalLink, Download, ArrowUp, Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,7 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const navigation = [
     { id: 'home', label: 'Home' },
@@ -34,19 +34,19 @@ const Index = () => {
       title: 'Renewable Energy Awareness Chatbot',
       description: 'AI-powered chatbot built using Streamlit to promote awareness about renewable energy sources',
       tech: ['Python', 'Dialogflow', 'VS Code'],
-      github: 'https://github.com/saimeghana'
+      github: 'https://github.com/saimeghana/renewable-energy-chatbot' // Update with your actual repo URL
     },
     {
       title: 'AyushCare – Rural Health Monitoring',
       description: 'IoT-based health monitoring system for rural areas using sensors and cloud connectivity',
       tech: ['NodeMCU', 'Blynk', 'Sensors'],
-      github: 'https://github.com/saimeghana'
+      github: 'https://github.com/saimeghana/ayushcare-health-monitoring' // Update with your actual repo URL
     },
     {
       title: 'Incredible India – Cultural Explorer',
       description: 'Streamlit web app showcasing India\'s rich cultural heritage with interactive features',
       tech: ['Python', 'Streamlit', 'Web Development'],
-      github: 'https://github.com/saimeghana'
+      github: 'https://github.com/saimeghana/incredible-india-explorer' // Update with your actual repo URL
     }
   ];
 
@@ -62,6 +62,12 @@ const Index = () => {
     const handleScroll = () => {
       const sections = navigation.map(nav => document.getElementById(nav.id));
       const scrollPosition = window.scrollY + 100;
+
+      // Calculate scroll progress
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      setScrollProgress(scrolled);
 
       sections.forEach((section, index) => {
         if (section) {
@@ -93,8 +99,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+        <div 
+          className="h-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
+
       {/* Navigation Header */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+      <nav className="fixed top-1 w-full bg-white/80 backdrop-blur-md z-40 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -160,6 +174,7 @@ const Index = () => {
                 alt="K.N.V Sai Meghana"
                 className="w-48 h-48 rounded-full mx-auto shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500"
               />
+              <p className="text-sm text-slate-500 mt-2">📸 Upload your photo to replace this placeholder</p>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent animate-scale-in">
               K.N.V Sai Meghana
@@ -200,6 +215,7 @@ const Index = () => {
                 alt="About Sai Meghana"
                 className="rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-500"
               />
+              <p className="text-sm text-slate-500 mt-2 text-center">📸 Upload your about photo to replace this placeholder</p>
             </div>
             <div className="space-y-6 animate-fade-in">
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -247,6 +263,7 @@ const Index = () => {
               Projects
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            <p className="text-sm text-slate-500 mt-4">💡 Update the GitHub URLs in the code with your actual repository links</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -297,6 +314,7 @@ const Index = () => {
               <Download className="w-5 h-5 mr-2" />
               Download Resume
             </Button>
+            <p className="text-sm text-slate-500 mt-2">📄 Add your resume PDF link to the button above</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -396,6 +414,7 @@ const Index = () => {
               Gallery
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            <p className="text-sm text-slate-500 mt-4">📸 Upload your project photos to replace these placeholders</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -430,6 +449,7 @@ const Index = () => {
               Get In Touch
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            <p className="text-sm text-slate-500 mt-4">📧 Update the email address and LinkedIn URL below</p>
           </div>
           
           <div className="text-center space-y-8">
@@ -439,7 +459,7 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-                <a href="mailto:your-email@example.com">
+                <a href="mailto:saimeghana@example.com">
                   <Mail className="w-5 h-5 mr-2" />
                   Send Email
                 </a>
@@ -493,7 +513,7 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Connect</h4>
               <div className="flex space-x-4">
-                <a href="mailto:your-email@example.com" className="text-slate-400 hover:text-white transition-colors duration-300">
+                <a href="mailto:saimeghana@example.com" className="text-slate-400 hover:text-white transition-colors duration-300">
                   <Mail className="w-6 h-6" />
                 </a>
                 <a href="https://github.com/saimeghana" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
