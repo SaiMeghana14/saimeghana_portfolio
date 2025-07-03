@@ -23,7 +23,7 @@ const Index = () => {
   ];
 
   const skills = {
-    languages: ['Python', 'C', 'Java', 'SQL'],
+    programming_languages: ['Python', 'C', 'Java', 'SQL'],
     tools: ['HTML', 'CSS', 'JavaScript', 'Git', 'VS Code'],
     platforms: ['GitHub', 'VS Code', 'Tinkercad', 'Arduino IDE', 'Xilinx'],
     softSkills: ['Effective Communication', 'Team Leadership', 'Project Management', 'Problem Solving', 'Time Management']
@@ -33,28 +33,29 @@ const Index = () => {
     {
       title: 'Renewable Energy Awareness Chatbot',
       description: 'AI-powered chatbot built using Streamlit to promote awareness about renewable energy sources',
-      tech: ['Python', 'Dialogflow', 'VS Code'],
-      github: 'https://github.com/saimeghana/renewable-energy-chatbot' // Update with your actual repo URL
+      tech: ['Python', 'Dialogflow', 'VS Code', 'Streamlit', 'GitHub'],
+      github: 'https://saimeghana14.github.io/Renewable-energy-chatbot/' // Update with your actual repo URL
     },
     {
-      title: 'AyushCare – Rural Health Monitoring',
-      description: 'IoT-based health monitoring system for rural areas using sensors and cloud connectivity',
-      tech: ['NodeMCU', 'Blynk', 'Sensors'],
-      github: 'https://github.com/saimeghana/ayushcare-health-monitoring' // Update with your actual repo URL
+      title: 'AyushCare – Rural Health Monitoring with IoT',
+      description: 'AyushCare is a smart IoT-based health monitoring system designed to support rural communities by enabling real-time tracking of vital signs like heart 
+rate, SpO₂, body temperature, and blood pressure.',
+      tech: ['Embedded C', 'Python','NodeMCU', 'Arduino IDE', 'Tinkercad'],
+      github: 'https://saimeghana14.github.io/AyushCare-IoT-Health/' // Update with your actual repo URL
     },
     {
       title: 'Incredible India – Cultural Explorer',
-      description: 'Streamlit web app showcasing India\'s rich cultural heritage with interactive features',
-      tech: ['Python', 'Streamlit', 'Web Development'],
-      github: 'https://github.com/saimeghana/incredible-india-explorer' // Update with your actual repo URL
+      description: 'A Streamlit web app that showcases India's rich cultural heritage—festivals, food, monuments, and more—powered by Snowflake as the backend and hosted on Streamlit Cloud.',
+      tech: ['Python', 'HTML', 'Pandas','Streamlit', 'Snowflake'],
+      github: 'https://saimeghana14.github.io/incredible-india/' // Update with your actual repo URL
     }
   ];
 
   const achievements = [
     'NPTEL – Python for Data Science',
-    'Cisco Networking Essentials',
-    'Python Foundation Certification',
-    'Develop Custom Embedded board for Robotics Applications',
+    'NetAcad - Cisco Networking Essentials',
+    'Infosys Springboard - Python Foundation Certification',
+    'IEEE - Develop Custom Embedded board for Robotics Applications',
     'Finalist: Code for Bharat Hackathon'
   ];
 
@@ -170,7 +171,7 @@ const Index = () => {
           <div className="animate-fade-in">
             <div className="mb-8">
               <img
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop&crop=faces"
+                src="https://smallpdf.com/file#s=8867814a-67d7-4813-98a1-f52012573b98"
                 alt="K.N.V Sai Meghana"
                 className="w-48 h-48 rounded-full mx-auto shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500"
               />
@@ -211,11 +212,11 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=600&fit=crop"
+                src="https://smallpdf.com/file#s=3b3bf74b-24c2-421f-bd69-8d93d877464f"
                 alt="About Sai Meghana"
                 className="rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-500"
               />
-              <p className="text-sm text-slate-500 mt-2 text-center">📸 Upload your about photo to replace this placeholder</p>
+              <p className="text-sm text-slate-500 mt-2">📸 Upload your about photo to replace this placeholder</p>
             </div>
             <div className="space-y-6 animate-fade-in">
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -312,7 +313,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               <Download className="w-5 h-5 mr-2" />
-              Download Resume
+              Download Resume <a href="Sai Meghana.pdf" download>
             </Button>
             <p className="text-sm text-slate-500 mt-2">📄 Add your resume PDF link to the button above</p>
           </div>
@@ -459,7 +460,7 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-                <a href="mailto:saimeghana@example.com">
+                <a href="mailto:knvsaimeghana@gmail.com">
                   <Mail className="w-5 h-5 mr-2" />
                   Send Email
                 </a>
@@ -467,7 +468,7 @@ const Index = () => {
               
               <div className="flex gap-4">
                 <Button variant="outline" size="icon" className="rounded-full hover:bg-blue-100 hover:border-blue-500 transition-all duration-300" asChild>
-                  <a href="https://github.com/saimeghana" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/SaiMeghana14" target="_blank" rel="noopener noreferrer">
                     <Github className="w-5 h-5" />
                   </a>
                 </Button>
@@ -513,10 +514,10 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Connect</h4>
               <div className="flex space-x-4">
-                <a href="mailto:saimeghana@example.com" className="text-slate-400 hover:text-white transition-colors duration-300">
+                <a href="mailto:knvsaimeghana@gmail.com" className="text-slate-400 hover:text-white transition-colors duration-300">
                   <Mail className="w-6 h-6" />
                 </a>
-                <a href="https://github.com/saimeghana" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
+                <a href="https://github.com/SaiMeghana14" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
                   <Github className="w-6 h-6" />
                 </a>
                 <a href="https://linkedin.com/in/naga-venkata-sai-meghana-kovvada131b51259" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
